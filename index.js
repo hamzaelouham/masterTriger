@@ -81,7 +81,7 @@ id = setInterval(() => {
 }, daily);
 
 app.get("/", (req, res) => {
-  res.send(counter);
+  res.send("counter");
 });
 
 app.listen(port, () => {
