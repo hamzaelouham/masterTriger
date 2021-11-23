@@ -1,8 +1,6 @@
 const axios = require("axios");
 const https = require("https");
-const express = require("express");
 const Vonage = require("@vonage/server-sdk");
-const app = express();
 const { JSDOM } = require("jsdom");
 require("dotenv").config();
 
@@ -23,6 +21,7 @@ const vonage = new Vonage({
 
 async function getHtml() {
   try {
+    console.log("requset send ...");
     const { data } = await axios.get(
       "https://fs.uit.ac.ma/preselection-master-2021-2022/",
       {
@@ -32,7 +31,6 @@ async function getHtml() {
       }
     );
     c = initJsDom(data);
-    console.log("requset send ...");
   } catch (e) {
     console.log(e);
   }
@@ -79,11 +77,3 @@ function sendSMS(sms) {
 id = setInterval(() => {
   getHtml();
 }, daily);
-
-app.get("/", (req, res) => {
-  res.send("counter");
-});
-
-app.listen(port, () => {
-  console.log(`server running in port ${port}`);
-});
