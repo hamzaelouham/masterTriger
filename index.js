@@ -10,7 +10,6 @@ let id;
 const bigData = 27;
 const Geni = 28;
 const daily = 1200000;
-const port = process.env.PORT || 5000;
 const from = "Vonage APIs";
 const to = "212770218827";
 
