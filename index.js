@@ -36,7 +36,7 @@ async function getHtml() {
   }
   if (c == 2) {
     clearInterval(id);
-    process.exit(0);
+    //process.exit(0);
   }
 }
 
